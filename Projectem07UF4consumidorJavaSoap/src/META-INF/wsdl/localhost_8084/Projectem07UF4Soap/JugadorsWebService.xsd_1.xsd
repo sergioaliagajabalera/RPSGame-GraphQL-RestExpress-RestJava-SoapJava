@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://daw2.fje.edu/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://daw2.fje.edu/">
+
+<xs:element name="acabarJoc" type="tns:acabarJoc" />
+
+<xs:element name="acabarJocResponse" type="tns:acabarJocResponse" />
+
+<xs:element name="consultarEstatPartida" type="tns:consultarEstatPartida" />
+
+<xs:element name="consultarEstatPartidaResponse" type="tns:consultarEstatPartidaResponse" />
+
+<xs:element name="iniciarJoc" type="tns:iniciarJoc" />
+
+<xs:element name="iniciarJocResponse" type="tns:iniciarJocResponse" />
+
+<xs:element name="moureJugador" type="tns:moureJugador" />
+
+<xs:element name="moureJugadorResponse" type="tns:moureJugadorResponse" />
+
+<xs:element name="pedrapapertisores" type="tns:pedrapapertisores" />
+
+<xs:element name="pedrapapertisoresResponse" type="tns:pedrapapertisoresResponse" />
+
+<xs:complexType name="consultarEstatPartida">
+<xs:sequence>
+<xs:element name="codi" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarEstatPartidaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pedrapapertisores">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0" />
+<xs:element name="arg1" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pedrapapertisoresResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acabarJoc">
+<xs:sequence>
+<xs:element name="codi" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acabarJocResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="moureJugador">
+<xs:sequence>
+<xs:element name="codi" type="xs:int" />
+<xs:element name="njugador" type="xs:int" />
+<xs:element name="tipusmoviment" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="moureJugadorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="iniciarJoc">
+<xs:sequence>
+<xs:element name="codi" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="iniciarJocResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

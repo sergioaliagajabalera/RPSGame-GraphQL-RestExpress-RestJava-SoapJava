@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="utf-8" />
+		<title>DAW2</title>
+		<meta name="author" content="sergio aliaga" />
+	</head>
+	<body>
+        <h1>Esborra partida</h1>
+		Introdueix codi Partida:<input type="text" name="codipartida" id="codipartida" value="" />
+		<br />
+		<label id="operacions"></label>
+		<p id="resposta"></p>
+	</body>
+</html>
+<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function() {
+	if(this.readyState === 4) {
+		console.log(this.responseText);
+		document.getElementById('resposta').innerHTML=this.responseText;	}
+	});
+
+	document.getElementById("codipartida").onchange = function() {
+		var codiPartida=document.getElementById("codipartida").value;
+        console.log(codiPartida);
+        let data="codi="+codiPartida;
+        console.log(data);
+		xhr.open("DELETE", "http://localhost:3000/acabarJoc/codiPartida");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send(data);
+	}
+</script>

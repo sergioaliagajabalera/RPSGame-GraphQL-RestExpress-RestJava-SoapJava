@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="utf-8" />
+		<title>DAW2</title>
+		<meta name="author" content="sergio aliaga" />
+	</head>
+	<body>
+		Introdueix codi Partida:<input type="text" name="codipartida" id="codipartida" value="" />
+		<br />
+		<a href="../Projectem07UF4Rest">Tornar</a><br/>
+                <p id="respostaserver"></p>
+	</body>
+</html>
+<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function() {
+	if(this.readyState === 4) {
+		document.getElementById("respostaserver").innerHTML=this.responseText;
+	}
+	});
+
+	document.getElementById("codipartida").onchange = function() {
+		var codiPartida=document.getElementById("codipartida").value;
+		console.log(codiPartida);
+		var data ="";
+		xhr.open("GET", "http://localhost:8084/Projectem07UF4Rest/webresources/api/consultarEstatPartida/"+codiPartida);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send(data);
+	}
+</script>
